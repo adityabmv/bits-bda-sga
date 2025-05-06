@@ -4,7 +4,7 @@
 <body>
 <h2>Student List</h2>
 <table border="1">
-    <tr><th>ID</th><th>Name</th><th>Email</th><th>Courses</th></tr>
+    <tr><th>ID</th><th>Name</th><th>Email</th><th>Courses</th><th>Action</th></tr>
     <c:forEach var="s" items="${students}">
         <tr>
             <td>${s.id}</td>
@@ -14,6 +14,9 @@
                 <c:forEach var="c" items="${s.courses}">
                     ${c.title}<br/>
                 </c:forEach>
+            </td>
+            <td>
+                <a href="/students/edit/${s.id}">Edit</a>
             </td>
         </tr>
     </c:forEach>
