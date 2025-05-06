@@ -3,6 +3,8 @@
 <head><title>Course List</title></head>
 <body>
 <h2>All Courses</h2>
+<a href="/courses/new">Add New Course</a>
+<br/><br/>
 <table border="1">
     <tr>
         <th>ID</th>

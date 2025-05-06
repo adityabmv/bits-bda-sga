@@ -70,8 +70,8 @@ public class StudentController {
     }
 
     @GetMapping("/")
-    public String homeRedirect() {
-        return "redirect:/students";
+    public String homePage() {
+        return "home";
     }
 
 }

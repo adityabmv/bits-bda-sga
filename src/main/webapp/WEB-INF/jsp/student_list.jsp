@@ -3,6 +3,8 @@
 <head><title>Student List</title></head>
 <body>
 <h2>Student List</h2>
+<a href="/students/new">Add New Student</a>
+<br/><br/>
 <table border="1">
     <tr><th>ID</th><th>Name</th><th>Email</th><th>Courses</th><th>Action</th></tr>
     <c:forEach var="s" items="${students}">

@@ -4,10 +4,7 @@ import com.example.bitsbdasga.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class CourseController {
@@ -42,5 +39,18 @@ public class CourseController {
         }
         return "redirect:/courses";
     }
+
+    @GetMapping("/courses/new")
+    public String showCreateForm(Model model) {
+        model.addAttribute("course", new com.example.bitsbdasga.entity.Course());
+        return "course_form";
+    }
+
+    @PostMapping("/courses")
+    public String saveCourse(@ModelAttribute("course") com.example.bitsbdasga.entity.Course course) {
+        courseService.save(course);
+        return "redirect:/courses";
+    }
+
 
 }
