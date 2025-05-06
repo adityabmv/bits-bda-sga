@@ -22,4 +22,13 @@ public class CourseService {
     public List<Course> findCoursesByIds(List<Long> ids) {
         return repo.findAllById(ids);
     }
+
+    public Course findById(Long id) {
+        return repo.findById(id).orElse(null);
+    }
+
+    public void save(Course course) {
+        repo.save(course);
+    }
+
 }
